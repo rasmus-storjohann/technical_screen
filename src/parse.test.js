@@ -8,6 +8,13 @@ describe('The parser function', () => {
     expect(parsedData.length).to.eq(1);
   });
 
+  it('can parse two lines', () => {
+    let data = 'name1,1,2,address1,http://url1.ca\n' +
+               'name2,3,4,address2,http://url2.ca'
+
+    expect(parse(data).length).to.eq(2);
+  });
+
   it('can extract community centre name', () => {
     expect(parsedData[0].name).to.eq('Britannia');
   });
