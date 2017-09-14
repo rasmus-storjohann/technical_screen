@@ -6,7 +6,7 @@ var parse = (input) =>
     var parsedLines = synchronousCsvParse(input);
 
     return parsedLines.map((row) => {
-        return new CommunityCentre(row[0]);
+        return new CommunityCentre(row[0], row[3], row[4]);
     });
 }
 

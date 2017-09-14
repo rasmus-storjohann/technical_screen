@@ -1,8 +1,10 @@
 class CommunityCentre
 {
-    constructor(name)
+    constructor(name, address, url)
     {
         this.name = name;
+        this.address = address;
+        this.url = url;
     }
 }
 
