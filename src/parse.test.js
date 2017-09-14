@@ -4,15 +4,21 @@ let expect = require('chai').expect;
 describe('The parser function', () => {
   let parsedData = parse('Britannia,49.2756,-123.0738,1661 Napier St,http://vancouver.ca/parks/cc/britannia/index.htm');
 
+  it('leaves out the header line', () => {
+    let data = 'CENTRE_NAME,LATITUDE,LONGITUDE,ADDRESS,URLLINK\n' +
+               'Britannia,49.2756,-123.0738,1661 Napier St,http://vancouver.ca/parks/cc/britannia/index.htm'
+    expect(parse(data)).to.have.lengthOf(1);
+  });
+
   it('can parse one line', () => {
-    expect(parsedData.length).to.eq(1);
+    expect(parsedData).to.have.lengthOf(1);
   });
 
   it('can parse two lines', () => {
     let data = 'name1,1,2,address1,http://url1.ca\n' +
                'name2,3,4,address2,http://url2.ca'
 
-    expect(parse(data).length).to.eq(2);
+    expect(parse(data)).to.have.lengthOf(2);
   });
 
   it('can extract community centre name', () => {
@@ -34,4 +40,5 @@ describe('The parser function', () => {
   it('can extract community centre longitude', () => {
     expect(parsedData[0].location.longitude).to.eq('-123.0738');
   });
+
 });

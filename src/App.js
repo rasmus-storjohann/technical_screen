@@ -5,6 +5,7 @@ import createModel from './createModel';
 
 class App extends Component {
   render() {
+    createModel(model => this.model = model);
     return (
       <div className="App">
         <div className="App-header">
