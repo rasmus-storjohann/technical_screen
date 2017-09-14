@@ -4,6 +4,13 @@ class Model
     {
         this.data = data;
     }
+
+    getFilteredByName(searchTerm)
+    {
+        let matchesSearchTerm = communityCentre => communityCentre.name.indexOf(searchTerm) !== -1;
+
+        return this.data.filter(matchesSearchTerm);
+    }
 }
 
 export default Model;
