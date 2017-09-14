@@ -1,7 +1,9 @@
 import Model from './Model';
 import parse from './parse';
 
-let createModel = url => {
+let url = 'ftp://webftp.vancouver.ca/OpenData/csv/community_centres.csv';
+
+let createModel = () => {
   return fetch(url)
     .then(response => response.blob)
     .then(blob => parse(blob))
