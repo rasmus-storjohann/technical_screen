@@ -1,23 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import createModel from './createModel';
 
-class App extends Component {
-  render() {
-    createModel(model => this.model = model);
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+class App extends Component
+{
+  constructor()
+  {
+    super();
+    this.model = createModel();
   }
+
+  getFilteredCommunityCentres()
+  {
+    return this.model.getFilteredByName('');
+  }
+
+  render()
+  {
+    let rows = this.getFilteredCommunityCentres().map(centre =>
+    {
+      return <CommunityCentreRow key={centre.name} data={centre} />
+    });
+    return <table><tbody>{rows}</tbody></table>
+  }
+}
+
+const CommunityCentreRow = (props) => {
+  return (
+    <tr>
+      <td>{ props.data.name }</td>
+      <td>{ props.data.url }</td>
+    </tr>
+  );
 }
 
 export default App;

@@ -1,4 +1,5 @@
 import parse from './parse';
+import Model from './Model';
 
 // could not figure out how to read data from an ftp end point, hacking around it for now
 let rawData = `CENTRE_NAME,LATITUDE,LONGITUDE,ADDRESS,URLLINK
@@ -30,6 +31,6 @@ Creekside,49.2718,-123.1056,1 Athletes Way,http://vancouver.ca/parks/cc/creeksid
 Evelyne Saller Centre,49.2839,-123.0971,320 Alexander St,http://vancouver.ca/parks-recreation-culture/evelyne-saller-centre.aspx
 Gathering Place Community Centre,49.278,-123.1235,609 Helmcken St,http://vancouver.ca/parks-recreation-culture/gathering-place-community-centre.aspx`;
 
-let createModel = callback => callback(parse(rawData));
+let createModel = () => new Model(parse(rawData));
 
 export default createModel;

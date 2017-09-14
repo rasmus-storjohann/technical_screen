@@ -7,7 +7,7 @@ class Model
 
     getFilteredByName(searchTerm)
     {
-        let matchesSearchTerm = communityCentre => communityCentre.name.indexOf(searchTerm) !== -1;
+        let matchesSearchTerm = centre => !searchTerm || centre.name.indexOf(searchTerm) !== -1;
 
         return this.data.filter(matchesSearchTerm);
     }

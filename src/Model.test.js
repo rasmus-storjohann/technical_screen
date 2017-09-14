@@ -16,6 +16,16 @@ describe('The model', () => {
   describe('filter by name', () => {
     let model = new Model([communityCentre]);
 
+    it('includes everthing if matching string is empty', () => {
+      let filteredList = model.getFilteredByName('');
+      expect(filteredList).to.have.lengthOf(1);
+    });
+
+    it('includes everthing if matching string is null', () => {
+      let filteredList = model.getFilteredByName();
+      expect(filteredList).to.have.lengthOf(1);
+    });
+
     it('includes centre with matching name', () => {
       let filteredList = model.getFilteredByName('First');
       expect(filteredList).to.have.lengthOf(1);
