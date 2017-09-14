@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import createModel from './createModel';
 
 class App extends Component {
   render() {
+    createModel(modelWithData => this.model = modelWithData);
     console.log(this);
     return (
       <div className="App">
