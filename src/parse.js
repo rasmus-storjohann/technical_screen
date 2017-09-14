@@ -2,7 +2,7 @@ import CommunityCentre from './CommunityCentre';
 import MapLocation from './MapLocation';
 let synchronousCsvParse = require('csv-parse/lib/sync');
 
-var parse = (input) =>
+var parse = input =>
 {
     var parsedLines = synchronousCsvParse(input);
 

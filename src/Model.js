@@ -2,7 +2,7 @@ class Model
 {
     constructor(data)
     {
-        this.first = 'one';
+        this.data = data;
     }
 }
 
