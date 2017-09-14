@@ -20,4 +20,11 @@ describe('The parser function', () => {
     expect(parsedData[0].url).to.eq('http://vancouver.ca/parks/cc/britannia/index.htm');
   });
 
+  it('can extract community centre latitude', () => {
+    expect(parsedData[0].location.latitude).to.eq('49.2756');
+  });
+
+  it('can extract community centre longitude', () => {
+    expect(parsedData[0].location.longitude).to.eq('-123.0738');
+  });
 });
