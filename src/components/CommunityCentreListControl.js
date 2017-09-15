@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import createModel from './businessObjects/createModel';
+import createModel from '../businessObjects/createModel';
+import CommunityCentreListItem from './CommunityCentreListItem';
 
-var CommunityCentreListControl = React.createClass({
+var CommunityCentreListControl = React.createClass(
+{
   filterList: function(event)
   {
     var searchTerm = event.target.value;
@@ -10,6 +12,7 @@ var CommunityCentreListControl = React.createClass({
 
     this.setState({filteredItems: filteredItems});
   },
+
   getInitialState: function()
   {
      return {
@@ -17,10 +20,12 @@ var CommunityCentreListControl = React.createClass({
        filteredItems: []
      }
   },
+
   componentWillMount: function()
   {
     this.setState({filteredItems: this.state.model.getFilteredByName()})
   },
+
   render: function()
   {
     return (
@@ -31,25 +36,5 @@ var CommunityCentreListControl = React.createClass({
     );
   }
 });
-
-class CommunityCentreListItem extends Component
-{
-  render()
-  {
-    let rows = this.props.items.map(centre => (
-        <tr key={centre.name}>
-          <td><a href={centre.url}>{centre.name}</a></td>
-          <td>{centre.address}</td>
-        </tr>
-      )
-    );
-
-    return (
-      <table>
-        <tbody>{rows}</tbody>
-      </table>
-    );
-  }
-}
 
 export default CommunityCentreListControl;

@@ -1,7 +1,6 @@
 import parse from './parse';
 import Model from './Model';
 
-// could not figure out how to read data from an *ftp* end point, hacking around it for now
 let rawData = `CENTRE_NAME,LATITUDE,LONGITUDE,ADDRESS,URLLINK
 Britannia,49.2756,-123.0738,1661 Napier St,http://vancouver.ca/parks/cc/britannia/index.htm
 Carnegie Centre,49.2811,-123.1001,401 Main St,http://vancouver.ca/commsvcs/CARNEGIECENTRE/index.htm
