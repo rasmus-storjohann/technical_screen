@@ -1,5 +1,5 @@
-import MapLocation from './businessInterfaces/MapLocation';
-import CommunityCentre from './businessInterfaces/CommunityCentre';
+import MapLocation from '../businessInterfaces/MapLocation';
+import CommunityCentre from '../businessInterfaces/CommunityCentre';
 import Model from './Model';
 let expect = require('chai').expect;
 

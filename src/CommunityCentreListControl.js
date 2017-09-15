@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import createModel from './createModel';
+import createModel from './businessObjects/createModel';
 
 var CommunityCentreListControl = React.createClass({
   filterList: function(event)
