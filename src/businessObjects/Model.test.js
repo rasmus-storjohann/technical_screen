@@ -6,7 +6,7 @@ let expect = require('chai').expect;
 describe('The model', () => {
 
   let mapLocation = new MapLocation('123', '456');
-  let communityCentre = new CommunityCentre('First Community Centre', 'address', 'url', mapLocation);
+  let communityCentre = new CommunityCentre('First Community Centre', 'address', 'http://bla', mapLocation);
 
   it('can construct', () => {
     let model = new Model([communityCentre]);

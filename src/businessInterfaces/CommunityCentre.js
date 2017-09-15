@@ -4,8 +4,17 @@ class CommunityCentre
     {
         this.name = name;
         this.address = address;
-        this.url = url;
+        this.url = this.validateUrl(url);
         this.location = location;
+    }
+
+    validateUrl(url)
+    {
+        if (!/^https?:/.exec(url))
+        {
+            throw new Error('Invalid url: ' + url);
+        }
+        return url;
     }
 }
 
