@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import createModel from './createModel';
+import FilterForm from './FilterForm';
 
 class App extends Component
 {
@@ -21,7 +22,12 @@ class App extends Component
     {
       return <CommunityCentreRow key={centre.name} data={centre} />
     });
-    return <table><tbody>{rows}</tbody></table>
+    return (
+      <div>
+        <FilterForm/>
+        <table><tbody>{rows}</tbody></table>
+      </div>
+    )
   }
 }
 
