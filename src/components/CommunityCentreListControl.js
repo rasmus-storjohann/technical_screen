@@ -11,6 +11,7 @@ class CommunityCentreListControl extends Component
        model: createModel(),
        filteredItems: []
      };
+     this.filterList = this.filterList.bind(this);
   }
 
   filterList(event)
