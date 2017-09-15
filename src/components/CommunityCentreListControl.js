@@ -2,31 +2,32 @@ import React, { Component } from 'react';
 import createModel from '../businessObjects/createModel';
 import CommunityCentreListItem from './CommunityCentreListItem';
 
-var CommunityCentreListControl = React.createClass(
+class CommunityCentreListControl extends Component
 {
-  filterList: function(event)
+  constructor(props)
+  {
+    super(props);
+    this.state = {
+       model: createModel(),
+       filteredItems: []
+     };
+  }
+
+  filterList(event)
   {
     var searchTerm = event.target.value;
 
     var filteredItems = this.state.model.getFilteredByName(searchTerm);
 
     this.setState({filteredItems: filteredItems});
-  },
+  }
 
-  getInitialState: function()
-  {
-     return {
-       model: createModel(),
-       filteredItems: []
-     }
-  },
-
-  componentWillMount: function()
+  componentWillMount()
   {
     this.setState({filteredItems: this.state.model.getFilteredByName()})
-  },
+  }
 
-  render: function()
+  render()
   {
     return (
       <div>
@@ -35,6 +36,6 @@ var CommunityCentreListControl = React.createClass(
       </div>
     );
   }
-});
+}
 
 export default CommunityCentreListControl;
