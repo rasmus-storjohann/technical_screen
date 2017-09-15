@@ -1,5 +1,5 @@
-import CommunityCentre from './CommunityCentre';
-import MapLocation from './MapLocation';
+import CommunityCentre from './businessInterfaces/CommunityCentre';
+import MapLocation from './businessInterfaces/MapLocation';
 let parseCvsSynchronously = require('csv-parse/lib/sync');
 
 var createLocation = row => 
