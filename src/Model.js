@@ -7,7 +7,10 @@ class Model
 
     getFilteredByName(searchTerm)
     {
-        let matchesSearchTerm = centre => !searchTerm || centre.name.indexOf(searchTerm) !== -1;
+        let matchesSearchTerm = centre => 
+        {
+            return !searchTerm || centre.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+        };
 
         return this.data.filter(matchesSearchTerm);
     }

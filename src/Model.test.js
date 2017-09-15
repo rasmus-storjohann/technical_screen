@@ -32,6 +32,12 @@ describe('The model', () => {
       expect(filteredList[0].name).to.eq('First Community Centre');
     });
 
+    it('matches are case insensitive', () => {
+      let filteredList = model.getFilteredByName('first');
+      expect(filteredList).to.have.lengthOf(1);
+      expect(filteredList[0].name).to.eq('First Community Centre');
+    });
+
     it('excludes centre with non-matching name', () => {
       let filteredList = model.getFilteredByName('Second');
       expect(filteredList).to.be.empty;
